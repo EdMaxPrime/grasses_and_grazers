@@ -1,0 +1,68 @@
+int whenclicked;
+int updateID;
+int scrollIndex;
+int rightClickCoords;
+Array cycleTimes;
+float msgOffset;
+String place;
+String editing;
+String next;
+String last;
+World current;
+var saves;
+var lchart;
+var chartData;
+var chartOpts;
+boolean rightClick;
+color backGround;
+color buttonNormal;
+color buttonHover;
+color textLight;
+color textDark;
+color sliderBg;
+color sliderFg;
+color titleLabel;
+color titleText;
+color pauseMenu;
+color textTile1;
+color textTile2;
+
+void setup() {  //setup function called initially, only once
+  size(300, 500);
+  background(255);  //set background white
+  colorMode(RGB);   //set colors to Hue, Saturation, Brightness mode
+  counter = 0;
+  last = "/world/create/speed";
+  place = "/world/create/speed";
+  next = "/world/create/vegetation";
+  editing = "speed";
+  whenclicked = 50;
+  msgOffset = 5;
+  cycleTimes = [];
+  backGround = #AA3939;
+  buttonNormal = #801515;
+  buttonHover = #A63030;
+  buttonDisabled = #D46A6A;
+  textLight = #FFAAAA;
+  textDark = #550000;
+  sliderBg = #FFAAAA;
+  sliderFg = #D46A6A;
+  titleLabel = #801515;
+  titleText = #F0B4B4;
+  pauseMenu = #9C4024;
+  textTile1 = #DB5A5A;
+  textTile2 = #DB785A;
+  var script = document.createElement("script");
+  script.id = "soasScript";
+  script.type = "text/javascript";
+  script.src = "https://rawgit.com/nnnick/Chart.js/master/Chart.js";
+  document.body.appendChild(script);
+  //Processing.loadSketchFromSources(document.getElementById("pjsComplexSketch"), ["http://mod.zlotskiy.com/EdMaxPrime/pjs/animals_r172.pde"]);
+  chartData = { labels : [], datasets : [] };
+  chartOpts = { pointHitDetectionRadius : 5, datasetFill : false, pointDot : true };
+  scrollIndex = 0;
+  rightClick = false;
+  rightClickCoords = [0, 0];
+  saves = [];
+  current = new World();
+}
