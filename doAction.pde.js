@@ -119,7 +119,7 @@ void doAction(String action) {
                 if(getWorld().day == 0) { //if this is the first day, throw an error
                     doAction("go=" + place + "?box=No charts are available on the first day. Please wait until the next day to do this.");
                 }
-                if(datacodes.length < 3) { //if there are no variables chosen, throw an error
+                if(editing.length < 3) { //if there are no variables chosen, throw an error
                     doAction("go=" + place + "?box=You must specify at least one variable!");
                 }
                 String[] datacodes = split(editing, "+");
